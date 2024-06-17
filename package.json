@@ -1,0 +1,59 @@
+{
+    "name": "react-markdownarea",
+    "description": "react markdownarea",
+    "version": "0.0.1",
+    "main": "src/index.ts",
+    "private": false,
+    "publishConfig": {
+        "access": "public"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sonwonjae/react-markdownarea.git"
+    },
+    "keywords": [
+        "markdown"
+    ],
+    "author": "sonwonjae",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/sonwonjae/react-markdownarea/issues"
+    },
+    "homepage": "https://github.com/sonwonjae/react-markdownarea#readme",
+    "exports": {
+        "./styles.css": "./dist/index.css",
+        ".": "./src/index.ts"
+    },
+    "sideEffects": [
+        "**/*.css"
+    ],
+    "scripts": {
+        "lint": "eslint . --max-warnings 0",
+        "dev": "tailwindcss -i ./src/styles.css -o ./dist/index.css --watch"
+    },
+    "devDependencies": {
+        "@types/eslint": "^8.56.10",
+        "@types/node": "^20.14.2",
+        "@types/react": "^18.3.3",
+        "@types/react-dom": "^18.3.0",
+        "@typescript-eslint/eslint-plugin": "^7.1.0",
+        "@typescript-eslint/parser": "^7.1.0",
+        "@vercel/style-guide": "^5.2.0",
+        "eslint": "^8.57.0",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-config-turbo": "^2.0.0",
+        "eslint-plugin-import": "^2.29.1",
+        "eslint-plugin-no-relative-import-paths": "^1.5.4",
+        "eslint-plugin-only-warn": "^1.1.0",
+        "eslint-plugin-prettier": "^5.1.3",
+        "postcss": "^8.4.38",
+        "prettier": "^3.3.2",
+        "react": "^18.3.1",
+        "tailwindcss": "^3.4.1",
+        "typescript": "^5.4.5"
+    },
+    "dependencies": {
+        "clsx": "^2.1.1",
+        "tailwind-merge": "^2.3.0"
+    }
+}
