@@ -1,5 +1,5 @@
 {
-  "display": "React Markdownarea tsconfig",
+  "display": "React Markdownarea base tsconfig",
   "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
     "paths": { "@/*": ["./src/*"] },
@@ -19,12 +19,5 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "ES2022"
-  },
-  "include": [
-    "src",
-    "postcss.config.mjs",
-    "**/*.ts",
-    "**/*.tsx",
-  ],
-  "exclude": ["node_modules", "dist"]
+  }
 }

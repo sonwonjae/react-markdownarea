@@ -1,0 +1,15 @@
+{
+  "display": "React Markdownarea tsconfig for lint",
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["ES6", "DOM"],
+    "target": "ES6",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "outDir": "./lib/cjs",
+    "declarationDir": "./lib/cjs/types"
+  },
+  "files": ["src/index.ts"],
+  "exclude": ["node_modules"]
+}

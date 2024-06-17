@@ -1,0 +1,16 @@
+{
+  "display": "React Markdownarea tsconfig for lint",
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["ES2022", "DOM"],
+    "target": "ES2022",
+    // "module": "ESNext",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "outDir": "./lib/esm",
+    "declarationDir": "./lib/esm/types"
+  },
+  "files": ["src/index.ts"],
+  "exclude": ["node_modules"]
+}

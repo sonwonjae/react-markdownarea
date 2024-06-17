@@ -1,12 +1,7 @@
 {
     "name": "@sonwonjae/react-markdownarea",
     "description": "react markdownarea",
-    "version": "0.0.1",
-    "main": "src/index.ts",
-    "private": false,
-    "publishConfig": {
-        "access": "public"
-    },
+    "version": "0.0.2",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/sonwonjae/react-markdownarea.git"
@@ -20,6 +15,10 @@
         "url": "https://github.com/sonwonjae/react-markdownarea/issues"
     },
     "homepage": "https://github.com/sonwonjae/react-markdownarea#readme",
+    "publishConfig": {
+        "access": "public"
+    },
+    "main": "src/index.ts",
     "exports": {
         "./styles.css": "./dist/index.css",
         ".": "./src/index.ts"
@@ -29,7 +28,13 @@
     ],
     "scripts": {
         "lint": "eslint . --max-warnings 0",
-        "dev": "tailwindcss -i ./src/styles.css -o ./dist/index.css --watch"
+        "dev": "tailwindcss -i ./src/styles.css -o ./dist/index.css --watch",
+        "clean": "rm -rf ./lib",
+        "build": "npm run clean && npm run build:esm && npm run build:cjs",
+        "build:esm": "tsc -p ./tsconfig.esm.json && mv ./lib/esm/index.js ./lib/esm/index.mjs",
+        "build:cjs": "tsc -p ./tsconfig.cjs.json",
+        "prepack": "npm run build",
+        "test": "mocha"
     },
     "devDependencies": {
         "@types/eslint": "^8.56.10",

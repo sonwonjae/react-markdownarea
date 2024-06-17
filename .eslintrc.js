@@ -3,9 +3,9 @@ module.exports = {
 	root: true,
 	extends: ['eslint:recommended', 'turbo', 'plugin:prettier/recommended'],
 	parser: '@typescript-eslint/parser',
-    env: {
-        browser: true,
-    },
+	env: {
+		browser: true,
+	},
 	plugins: ['@typescript-eslint', 'import'],
 	globals: {
 		React: true,
@@ -88,7 +88,7 @@ module.exports = {
 		},
 	],
 	parserOptions: {
-		project: './tsconfig.json',
+		project: './tsconfig.lint.json',
 		tsconfigRootDir: __dirname,
 	},
 };

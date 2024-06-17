@@ -137,6 +137,7 @@ dist
 
 # Build Outputs
 build
+lib
 
 # Misc
 .DS_Store
