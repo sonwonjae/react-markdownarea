@@ -18,7 +18,11 @@
     "publishConfig": {
         "access": "public"
     },
-    "main": "src/index.ts",
+    "types": "./lib/cjs/types/index.d.ts",
+    "main": "./lib/cjs/index.js",
+    "files": [
+        "lib/**/*"
+    ],
     "exports": {
         "./styles.css": "./dist/index.css",
         ".": "./src/index.ts"
