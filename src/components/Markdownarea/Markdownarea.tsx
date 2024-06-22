@@ -2,8 +2,6 @@ import type { MarkdownareaPropsProviderProps } from './contexts/props/types';
 
 import { memo } from 'react';
 
-import { cn } from '@/utils/tailwindcss';
-
 import { MarkdownareaHistoryProvider } from './contexts/history';
 import {
 	MarkdownareaKeymapProvider,
@@ -25,16 +23,6 @@ function MarkdownareaComponent() {
 			ref={markdownareaRef}
 			autoComplete="off"
 			spellCheck="false"
-			className={cn(
-				'tracking-widest',
-				'w-full',
-				'h-full',
-				'min-h-[1.5em]',
-				'text-base',
-				'box-border',
-				'focus:outline-none',
-				'text-black',
-			)}
 			onKeyDown={onKeyDown}
 			onChange={onChange}
 		/>

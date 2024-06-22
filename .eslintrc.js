@@ -89,7 +89,7 @@ module.exports = {
 		},
 	],
 	parserOptions: {
-		project: './tsconfig.lint.json',
+		project: './tsconfig.json',
 		tsconfigRootDir: __dirname,
 	},
 };
