@@ -1,7 +1,7 @@
 {
     "name": "@sonwonjae/react-markdownarea",
     "description": "react markdownarea",
-    "version": "0.0.4",
+    "version": "1.0.0",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/sonwonjae/react-markdownarea.git"
