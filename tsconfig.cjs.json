@@ -8,8 +8,14 @@
     "module": "CommonJS",
     "moduleResolution": "Node",
     "outDir": "./lib/cjs",
-    "declarationDir": "./lib/cjs/types"
+    "declarationDir": "./lib/types"
   },
   "files": ["src/index.ts"],
+  "include": [
+    "src",
+    "postcss.config.mjs",
+    "**/*.ts",
+    "**/*.tsx",
+  ],
   "exclude": ["node_modules"]
 }

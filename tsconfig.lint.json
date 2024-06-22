@@ -2,11 +2,14 @@
   "display": "React Markdownarea tsconfig for lint",
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "paths": { "@/*": ["./src/*"] },
+  },
   "include": [
     "src",
     "postcss.config.mjs",
     "**/*.ts",
     "**/*.tsx",
   ],
-  "exclude": ["node_modules", "dist"]
+  "exclude": ["node_modules", "dist", "lib"]
 }

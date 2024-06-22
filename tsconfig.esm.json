@@ -5,12 +5,17 @@
   "compilerOptions": {
     "lib": ["ES2022", "DOM"],
     "target": "ES2022",
-    // "module": "ESNext",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
     "outDir": "./lib/esm",
-    "declarationDir": "./lib/esm/types"
+    "declarationDir": "./lib/types"
   },
   "files": ["src/index.ts"],
+  "include": [
+    "src",
+    "postcss.config.mjs",
+    "**/*.ts",
+    "**/*.tsx",
+  ],
   "exclude": ["node_modules"]
 }
