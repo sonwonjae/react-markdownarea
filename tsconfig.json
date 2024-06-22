@@ -23,5 +23,9 @@
         "incremental": false,
         "noUncheckedIndexedAccess": true,
     },
-    "include": ["src", "./index.ts"],
+    "include": [
+        "src",
+        "**/*.ts",
+        "**/*.tsx",
+    ],
 }

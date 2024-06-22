@@ -1,4 +1,4 @@
-import type { ComponentProps, RefObject } from 'react';
+import type { ComponentProps } from 'react';
 
 export interface ChangeValueParam {
 	/** 새롭게 적용할 value [=e.currentTarget.value] */
@@ -14,6 +14,5 @@ export interface ChangeValue {
 }
 
 export interface MarkdownareaValueContextValue {
-	markdownareaRef: RefObject<HTMLTextAreaElement>;
 	onChange: ComponentProps<'textarea'>['onChange'];
 }

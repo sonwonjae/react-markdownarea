@@ -1,42 +1,43 @@
 import type { MarkdownareaPropsProviderProps } from './contexts/props/types';
 
-import { memo } from 'react';
+import { forwardRef } from 'react';
 
 import { MarkdownareaHistoryProvider } from './contexts/history';
 import {
 	MarkdownareaKeymapProvider,
 	useMarkdownareaKeymapContext,
 } from './contexts/keymap';
-import { MarkdownareaPropsProvider } from './contexts/props';
+import {
+	MarkdownareaPropsProvider,
+	useMarkdownareaPropsContext,
+} from './contexts/props';
 import {
 	MarkdownareaValueProvider,
 	useMarkdownareaValueContext,
 } from './contexts/value';
 
-function MarkdownareaComponent() {
-	const { markdownareaRef } = useMarkdownareaValueContext();
+const MarkdownareaComponent = forwardRef<HTMLTextAreaElement>((_, ref) => {
+	const { ...props } = useMarkdownareaPropsContext();
 	const { onChange } = useMarkdownareaValueContext();
 	const { onKeyDown } = useMarkdownareaKeymapContext();
 
 	return (
 		<textarea
-			ref={markdownareaRef}
+			ref={ref}
 			autoComplete="off"
 			spellCheck="false"
 			onKeyDown={onKeyDown}
 			onChange={onChange}
+			{...props}
 		/>
 	);
-}
+});
+MarkdownareaComponent.displayName = 'MarkdownareaComponent';
 
-const MemoizedMarkdownareaComponent = memo(MarkdownareaComponent);
-
-export default function Markdownarea({
-	value,
-	onChange,
-	onKeyDown,
-	...props
-}: MarkdownareaPropsProviderProps) {
+const Markdownarea = forwardRef<
+	HTMLTextAreaElement,
+	MarkdownareaPropsProviderProps
+>(({ value, onChange, onKeyDown, ...props }, ref) => {
 	return (
 		<MarkdownareaPropsProvider
 			value={value}
@@ -47,10 +48,13 @@ export default function Markdownarea({
 			<MarkdownareaHistoryProvider>
 				<MarkdownareaValueProvider>
 					<MarkdownareaKeymapProvider>
-						<MemoizedMarkdownareaComponent />
+						<MarkdownareaComponent ref={ref} />
 					</MarkdownareaKeymapProvider>
 				</MarkdownareaValueProvider>
 			</MarkdownareaHistoryProvider>
 		</MarkdownareaPropsProvider>
 	);
-}
+});
+Markdownarea.displayName = 'Markdownarea';
+
+export default Markdownarea;

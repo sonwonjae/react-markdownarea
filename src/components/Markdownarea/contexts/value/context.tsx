@@ -1,14 +1,13 @@
 import type { MarkdownareaValueContextValue } from './types';
 import type { PropsWithChildren } from 'react';
 
-import { createContext, useContext, useMemo, useRef, useEffect } from 'react';
+import { createContext, useContext, useMemo } from 'react';
 
 import { useMarkdownareaHistoryContext } from '@/components/Markdownarea/contexts/history';
 import { useMarkdownareaPropsContext } from '@/components/Markdownarea/contexts/props';
 import { reorderOli } from '@/utils/markdown';
 
 const MarkdownareaValueContext = createContext<MarkdownareaValueContextValue>({
-	markdownareaRef: { current: null },
 	onChange: () => {},
 });
 
@@ -17,8 +16,7 @@ export const useMarkdownareaValueContext = () => {
 };
 
 export function MarkdownareaValueProvider({ children }: PropsWithChildren) {
-	const markdownareaRef = useRef<HTMLTextAreaElement>(null);
-	const { value, onChangeInherit } = useMarkdownareaPropsContext();
+	const { onChangeInherit } = useMarkdownareaPropsContext();
 	const { recordHistory } = useMarkdownareaHistoryContext();
 
 	const onChange: MarkdownareaValueContextValue['onChange'] = (e) => {
@@ -44,14 +42,8 @@ export function MarkdownareaValueProvider({ children }: PropsWithChildren) {
 	};
 
 	const contextValue = useMemo(() => {
-		return { markdownareaRef, onChange };
-	}, [markdownareaRef.current, onChange]);
-
-	useEffect(() => {
-		if (markdownareaRef.current) {
-			markdownareaRef.current.value = value;
-		}
-	}, [value]);
+		return { onChange };
+	}, [onChange]);
 
 	return (
 		<MarkdownareaValueContext.Provider value={contextValue}>

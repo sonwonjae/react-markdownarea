@@ -1,3 +1,7 @@
+const { resolve } = require('node:path');
+
+const project = resolve(process.cwd(), 'tsconfig.json');
+
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
 	root: true,
@@ -74,7 +78,6 @@ module.exports = {
 				pathGroupsExcludedImportTypes: ['type'],
 			},
 		],
-		// 'import/no-relative-parent-imports': 'error',
 	},
 	ignorePatterns: [
 		// Ignore dotfiles
@@ -89,7 +92,6 @@ module.exports = {
 		},
 	],
 	parserOptions: {
-		project: './tsconfig.json',
-		tsconfigRootDir: __dirname,
+		project: true,
 	},
 };
