@@ -39,13 +39,18 @@
         "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
         "preview": "vite preview",
         "prepack": "npm run build",
-        "test": "cypress open"
+        "test": "cypress open",
+        "release": "semantic-release"
     },
     "peerDependencies": {
         "react": "^18.2.0",
         "react-dom": "^18.2.0"
     },
     "devDependencies": {
+        "@semantic-release/changelog": "^6.0.3",
+        "@semantic-release/git": "^10.0.1",
+        "@semantic-release/github": "^10.0.6",
+        "@semantic-release/npm": "^12.0.1",
         "@types/eslint": "^8.56.10",
         "@types/node": "^20.10.0",
         "@types/react": "^18.2.37",
@@ -66,6 +71,7 @@
         "eslint-plugin-react-hooks": "^4.6.0",
         "eslint-plugin-react-refresh": "^0.4.4",
         "next": "^14.2.4",
+        "semantic-release": "^24.0.0",
         "typescript": "^5.2.2",
         "vite": "^5.0.0",
         "vite-plugin-dts": "^3.6.3"

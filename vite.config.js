@@ -33,11 +33,16 @@ export default defineConfig({
 			exclude: [
 				'node_modules',
 				'src/app',
+				'**/*.config.ts',
 				'**/*.config.js',
 				'**/*.config.mjs',
 				'**/prettierrc.base.js',
 				'next-env.d.ts',
 				'.next/types/**/*.ts',
+				// NOTE: test tool 제외
+				'cypress',
+				'**/*.cy.ts',
+				'**/*.cy.tsx',
 			],
 		}),
 	],
