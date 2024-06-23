@@ -9,6 +9,7 @@ module.exports = {
 	parser: '@typescript-eslint/parser',
 	env: {
 		browser: true,
+		node: true,
 	},
 	plugins: ['@typescript-eslint', 'import'],
 	globals: {
