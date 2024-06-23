@@ -106,7 +106,6 @@ export const splitMarkdownOfSyntax = (markdown: string) => {
 			text: markdown,
 		};
 	}
-	// eslint-disable-next-line no-unused-vars
 	const [_, syntax = '', text = ''] = markdown.split(REGEXP);
 
 	return {

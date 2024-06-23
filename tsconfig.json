@@ -1,32 +1,53 @@
 {
-    "compilerOptions": {
-        "target": "ES2020",
-        "useDefineForClassFields": true,
-        "lib": ["ES2020", "DOM", "DOM.Iterable"],
-        "module": "ESNext",
-        "skipLibCheck": true,
-        "moduleResolution": "bundler",
-        "allowImportingTsExtensions": true,
-        "resolveJsonModule": true,
-        "isolatedModules": true,
-        "noEmit": true,
-        "jsx": "react-jsx",
-        "strict": true,
-        "noUnusedLocals": true,
-        "noUnusedParameters": true,
-        "noFallthroughCasesInSwitch": true,
-        "typeRoots": ["./lib/index.d.ts", "node_modules/@types"],
-        "paths": { "@/*": ["./src/*"] },
-        "declaration": true,
-        "declarationMap": true,
-        "esModuleInterop": true,
-        "incremental": false,
-        "noUncheckedIndexedAccess": true,
-    },
-    "include": [
-        "src",
-        "*.config.js",
-        "**/*.ts",
-        "**/*.tsx",
+  "compilerOptions": {
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": [
+      "ES2020",
+      "DOM",
+      "DOM.Iterable"
     ],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "preserve",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "declaration": true,
+    "declarationMap": true,
+    "esModuleInterop": true,
+    "incremental": false,
+    "noUncheckedIndexedAccess": true,
+    "allowJs": true,
+    "typeRoots": ["./lib/index.d.ts", "node_modules/@types"],
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": [
+    "src",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.config.js",
+    "**/*.config.mjs",
+    "**/prettierrc.base.js",
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

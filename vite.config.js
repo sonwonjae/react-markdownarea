@@ -22,10 +22,25 @@ export default defineConfig({
 				},
 			},
 		},
+		outDir: 'lib',
 		sourcemap: true,
 		emptyOutDir: true,
 	},
-	plugins: [react(), dts()],
+	plugins: [
+		react(),
+		dts({
+			/** NOTE: build 시 필요없는 파일 제외 */
+			exclude: [
+				'node_modules',
+				'src/app',
+				'**/*.config.js',
+				'**/*.config.mjs',
+				'**/prettierrc.base.js',
+				'next-env.d.ts',
+				'.next/types/**/*.ts',
+			],
+		}),
+	],
 	resolve: {
 		alias: [{ find: '@', replacement: path.resolve(__dirname, 'src') }],
 	},

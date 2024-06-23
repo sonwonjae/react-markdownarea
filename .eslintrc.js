@@ -5,11 +5,17 @@ const project = resolve(process.cwd(), 'tsconfig.json');
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
 	root: true,
-	extends: ['eslint:recommended', 'turbo', 'plugin:prettier/recommended'],
+	extends: [
+		'next/core-web-vitals',
+		'eslint:recommended',
+		'turbo',
+		'plugin:prettier/recommended',
+	],
 	parser: '@typescript-eslint/parser',
 	env: {
 		browser: true,
 		node: true,
+		es6: true,
 	},
 	plugins: ['@typescript-eslint', 'import'],
 	globals: {
@@ -93,6 +99,7 @@ module.exports = {
 		},
 	],
 	parserOptions: {
-		project: true,
+		project: './tsconfig.json',
+		tsconfigRootDir: __dirname,
 	},
 };
