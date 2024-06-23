@@ -10,14 +10,16 @@ module.exports = {
 		'eslint:recommended',
 		'turbo',
 		'plugin:prettier/recommended',
+		'plugin:cypress/recommended',
 	],
 	parser: '@typescript-eslint/parser',
 	env: {
 		browser: true,
 		node: true,
 		es6: true,
+		'cypress/globals': true,
 	},
-	plugins: ['@typescript-eslint', 'import'],
+	plugins: ['@typescript-eslint', 'import', 'cypress'],
 	globals: {
 		React: true,
 		JSX: true,

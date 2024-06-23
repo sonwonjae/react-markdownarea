@@ -1,1 +1,4 @@
-export * from './context';
+export {
+	useMarkdownareaHistoryContext,
+	MarkdownareaHistoryProvider,
+} from './context';

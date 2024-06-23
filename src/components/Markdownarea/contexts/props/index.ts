@@ -1,1 +1,4 @@
-export * from './context';
+export {
+	useMarkdownareaPropsContext,
+	MarkdownareaPropsProvider,
+} from './context';
