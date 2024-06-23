@@ -17,12 +17,6 @@ export default function Home() {
 					setValue(e.currentTarget.value);
 				}}
 			/>
-			<input
-				value={value}
-				onChange={(e) => {
-					setValue(e.target.value);
-				}}
-			/>
 		</main>
 	);
 }
