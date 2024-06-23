@@ -15,7 +15,7 @@
         "noUnusedLocals": true,
         "noUnusedParameters": true,
         "noFallthroughCasesInSwitch": true,
-        "typeRoots": ["./dist/index.d.ts", "node_modules/@types"],
+        "typeRoots": ["./lib/index.d.ts", "node_modules/@types"],
         "paths": { "@/*": ["./src/*"] },
         "declaration": true,
         "declarationMap": true,
