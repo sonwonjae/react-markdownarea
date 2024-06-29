@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/sonwonjae/react-markdownarea/compare/v1.1.0...v1.1.1) (2024-06-29)
+
+
+### Bug Fixes
+
+* version 수정 ([b33f018](https://github.com/sonwonjae/react-markdownarea/commit/b33f01811c9eff3939e475979f7d1e0662c06541))
+
 # [1.1.0](https://github.com/sonwonjae/react-markdownarea/compare/v1.0.0...v1.1.0) (2024-06-23)
 
 
